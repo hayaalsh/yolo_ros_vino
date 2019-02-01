@@ -34,7 +34,7 @@
 				<biases offset="1728" size="64"/>
 			</blobs>
 		</layer>
-		<layer id="2" name="LeakyReLU_863" precision="FP32" type="ReLU">
+		<layer id="2" name="LeakyReLU_856" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -156,7 +156,7 @@
 				<biases offset="94080" size="256"/>
 			</blobs>
 		</layer>
-		<layer id="8" name="LeakyReLU_860" precision="FP32" type="ReLU">
+		<layer id="8" name="LeakyReLU_859" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -217,7 +217,7 @@
 				<biases offset="389248" size="512"/>
 			</blobs>
 		</layer>
-		<layer id="11" name="LeakyReLU_862" precision="FP32" type="ReLU">
+		<layer id="11" name="LeakyReLU_857" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -278,7 +278,7 @@
 				<biases offset="1569408" size="1024"/>
 			</blobs>
 		</layer>
-		<layer id="14" name="LeakyReLU_" precision="FP32" type="ReLU">
+		<layer id="14" name="LeakyReLU_864" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -339,7 +339,7 @@
 				<biases offset="6289024" size="2048"/>
 			</blobs>
 		</layer>
-		<layer id="17" name="LeakyReLU_858" precision="FP32" type="ReLU">
+		<layer id="17" name="LeakyReLU_863" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -400,7 +400,7 @@
 				<biases offset="25165440" size="4096"/>
 			</blobs>
 		</layer>
-		<layer id="20" name="LeakyReLU_865" precision="FP32" type="ReLU">
+		<layer id="20" name="LeakyReLU_" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -442,7 +442,7 @@
 				<biases offset="26218112" size="1024"/>
 			</blobs>
 		</layer>
-		<layer id="22" name="LeakyReLU_864" precision="FP32" type="ReLU">
+		<layer id="22" name="LeakyReLU_858" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -484,7 +484,7 @@
 				<biases offset="26350208" size="512"/>
 			</blobs>
 		</layer>
-		<layer id="24" name="LeakyReLU_857" precision="FP32" type="ReLU">
+		<layer id="24" name="LeakyReLU_860" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -570,7 +570,7 @@
 				<biases offset="29889664" size="1024"/>
 			</blobs>
 		</layer>
-		<layer id="28" name="LeakyReLU_859" precision="FP32" type="ReLU">
+		<layer id="28" name="LeakyReLU_865" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -613,7 +613,7 @@
 			</blobs>
 		</layer>
 		<layer id="30" name="detector/yolo-v3-tiny/Conv_12/BiasAdd/YoloRegion" precision="FP32" type="RegionYolo">
-			<data anchors="10,14,23,27,37,58,81,82,135,169,344,319" axis="1" classes="3" coords="4" do_softmax="0" end_axis="3" mask="1,2,3" num="6"/>
+			<data anchors="10,14,23,27,37,58,81,82,135,169,344,319" axis="1" classes="3" coords="4" do_softmax="0" end_axis="3" mask="0,1,2" num="6"/>
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -654,7 +654,7 @@
 				<biases offset="34633952" size="2048"/>
 			</blobs>
 		</layer>
-		<layer id="32" name="LeakyReLU_856" precision="FP32" type="ReLU">
+		<layer id="32" name="LeakyReLU_862" precision="FP32" type="ReLU">
 			<data negative_slope="0.10000000149011612"/>
 			<input>
 				<port id="0">
@@ -697,7 +697,7 @@
 			</blobs>
 		</layer>
 		<layer id="34" name="detector/yolo-v3-tiny/Conv_9/BiasAdd/YoloRegion" precision="FP32" type="RegionYolo">
-			<data anchors="10,14,23,27,37,58,81,82,135,169,344,319" axis="1" classes="3" coords="4" do_softmax="0" end_axis="3" mask="1,2,3" num="6"/>
+			<data anchors="10,14,23,27,37,58,81,82,135,169,344,319" axis="1" classes="3" coords="4" do_softmax="0" end_axis="3" mask="0,1,2" num="6"/>
 			<input>
 				<port id="0">
 					<dim>1</dim>
