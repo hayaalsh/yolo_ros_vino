@@ -279,7 +279,7 @@ void YoloRosVino::callback(const sensor_msgs::ImageConstPtr& current_image)
         unsigned long resized_im_h = inputInfo_.begin()->second.get()->getDims()[0];
         unsigned long resized_im_w = inputInfo_.begin()->second.get()->getDims()[1];
 
-        // Parsing outputs
+        // parsing outputs
         std::vector<DetectionObject> objects;
         for (auto &output : outputInfo_) {
             auto output_name = output.first;
@@ -288,7 +288,7 @@ void YoloRosVino::callback(const sensor_msgs::ImageConstPtr& current_image)
             ParseYOLOV3Output(layer, blob, resized_im_h, resized_im_w, height, width, thresh_, objects);
         }
 
-        // Filtering overlapping boxes
+        // filtering overlapping boxes
         std::sort(objects.begin(), objects.end());
         for (int i = 0; i < objects.size(); ++i) {
             if (objects[i].confidence == 0)
@@ -300,18 +300,19 @@ void YoloRosVino::callback(const sensor_msgs::ImageConstPtr& current_image)
             }
         }
 
-
         // formate results and publish
-        yolo_ros_vino::BoundingBoxes boundingBoxes;
-        int i = 1;
-        for (auto &object : objects) {
-            yolo_ros_vino::BoundingBox boundingBox = object.BoundingBox();
-            boundingBoxes.bounding_boxes.push_back(boundingBox);
+        if (objects.size()){
+            yolo_ros_vino::BoundingBoxes boundingBoxes;
+            int i = 1;
+            for (auto &object : objects) {
+                yolo_ros_vino::BoundingBox boundingBox = object.BoundingBox();
+                boundingBoxes.bounding_boxes.push_back(boundingBox);
+            }
+            boundingBoxes.header.stamp = ros::Time::now();
+            boundingBoxes.header.frame_id = "detection";
+            boundingBoxes.image_header = imageHeader;
+            boundingBoxesPublisher_.publish(boundingBoxes);
         }
-        boundingBoxes.header.stamp = ros::Time::now();
-        boundingBoxes.header.frame_id = "detection";
-        boundingBoxes.image_header = imageHeader;
-        boundingBoxesPublisher_.publish(boundingBoxes);
         
         // display result using opencv
         for (auto &object : objects) {

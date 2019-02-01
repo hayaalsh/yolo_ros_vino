@@ -25,10 +25,10 @@
 *.log
 *.sql
 *.sqlite
-*.labels
-*.bin
-*.mapping
-*.xml
+# *.labels
+# *.bin
+# *.mapping
+# *.xml
 
 # OS generated files #
 ######################
