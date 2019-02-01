@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+    <node pkg="yolo_ros_vino" type="yolo_ros_vino_node" name="yolo_ros_vino" output="screen">
+        <param name="model_thresh"          value="0.3"/>
+        <param name="model_iou_thresh"      value="0.4"/>
+        <param name="model_xml"             value="$(find yolo_ros_vino)/models/FP32/yolov3_tiny_tags.xml"/>
+        <param name="model_bin"             value="$(find yolo_ros_vino)/models/FP32/yolov3_tiny_tags.bin"/>
+        <param name="model_labels"          value="$(find yolo_ros_vino)/models/FP32/yolov3_tiny_tags.labels"/>
+        <param name="neural_compute_stick"  value="false"/>
+        <param name="camera_topic"          value="/camera/color/image_raw"/>
+        <param name="view_result"           value="true"/>
+    </node>
+</launch>
