@@ -32,7 +32,9 @@ python3 convert_weights_pb.py \
 ```
 
 ## from tensorflow (TF) to intermediate representation (IR)
-1) Create/check the json files under `tf_models` directory. Sampels files were provided, `gedit tf_models/yolov3_tiny_tags.json`. The values in your json file are determend by your NN architecture described in `.cfg` file (right after the word `[yolo]` inside your `.cfg` file). 
+1) Create/check the json files under `tf_models` directory. Sampels files were provided
+```gedit tf_models/yolov3_tiny_tags.json```
+The values in your json file are determend by your NN architecture described in `.cfg` file (right after the word `[yolo]` inside your `.cfg` file). 
 
 2) Convert tensorflow to intermediate representation (IR) format
 
@@ -59,7 +61,7 @@ python3 ~/intel/computer_vision_sdk/deployment_tools/model_optimizer/mo_tf.py \
 ```
 
 3) Modify your model paramters, including the locaiton of the converted files in yolo_ros_vino.launch and enable or disable your `neural_compute_stick` variable 
-`gedit ~/catkin_ws/src/yolo_ros_vino/launch/yolo_ros_vino.launch`
+```gedit ~/catkin_ws/src/yolo_ros_vino/launch/yolo_ros_vino.launch```
 
 4) finally launch your camera and yolo_ros_vino packages
 - `roslaunch realsense2_camera rs_camera.launch`
