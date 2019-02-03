@@ -28,7 +28,6 @@
 *.labels
 *.bin
 *.mapping
-*.xml
 
 # OS generated files #
 ######################
